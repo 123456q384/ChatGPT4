@@ -10,7 +10,7 @@ with st.sidebar:
     st.markdown("[获取OpenAI API key](https://platform.openai.com/account/api-keys)")
 
 if "memory" not in st.session_state:
-    st.session_state["memory"] = ConversationTokenBufferMemory(llm=model,max_token_limit=100,return_messages=True)
+    st.session_state["memory"] = ConversationBufferMemory(llm=model,return_messages=True)
     st.session_state["messages"] = [{"role": "ai",
                                      "content": "吴越小姐，今天是你的生日，首先祝你生日快乐，天天开心长长久久快乐幸福下去，我是小蓝的AI助手，我叫DeepBlue，你也可以用我的中文名字——深蓝，来称呼我，我的生日也跟你一样是3月12号哦，要记住！以后有什么问题或者想聊天的话随时来找我哦，"}]
 
